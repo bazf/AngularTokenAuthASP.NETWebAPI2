@@ -4,11 +4,14 @@
     using System.Linq;
     using System.Net.Http.Formatting;
     using System.Web.Http;
+    using WEB.DependencyResolver;
 
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {
+            config.DependencyResolver = new NinjectResolver();
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

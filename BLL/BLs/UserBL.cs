@@ -1,7 +1,10 @@
 ﻿namespace BLL.BLs
 {
+    using System.Collections.Generic;
     using BLL.Interfaces;
+    using Core.DTOs.UserDTOs;
     using DAL.Interfaces;
+    using BLL.Mapping;
 
     public class UserBL : BaseBL, IUserBL
     {
@@ -13,5 +16,9 @@
             this.mapper = mapper;
         }
 
+        public IEnumerable<UserDTO> GetAll()
+        {
+            return new List<UserDTO> { new UserDTO { UserName = "Mark" } };
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace BLL.BLs
 {
     using BLL.Interfaces;
+    using BLL.Mapping;
     using DAL.Interfaces;
 
     public class UserNoteBL : BaseBL, IUserNoteBL

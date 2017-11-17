@@ -60,7 +60,6 @@
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="Entities\UserNoteEntity.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />
-    <Compile Include="Interfaces\IMapper.cs" />
     <Compile Include="Interfaces\Implementations\GenericRepository.cs" />
     <Compile Include="Interfaces\Implementations\UnitOfWork.cs" />
     <Compile Include="Interfaces\Implementations\UnitOfWorkFactory.cs" />
