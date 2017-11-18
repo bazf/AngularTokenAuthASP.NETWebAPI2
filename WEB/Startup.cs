@@ -28,10 +28,6 @@ namespace WEB
             DependencyRegistrator.RegisterBindings(NinjectWebCommon.Kernel);
 
             ConfigureOAuth(app);
-
-            //HttpConfiguration config = new HttpConfiguration();
-            //WebApiConfig.Register(config);
-            //app.UseWebApi(config);
         }
 
         public void ConfigureOAuth(IAppBuilder app)

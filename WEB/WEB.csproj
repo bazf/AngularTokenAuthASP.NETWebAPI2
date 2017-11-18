@@ -229,16 +229,15 @@
     <Content Include="devComTestApp\.gitignore" />
     <Content Include="devComTestApp\karma.conf.js" />
     <Content Include="devComTestApp\protractor.conf.js" />
-    <Content Include="devComTestApp\src\app\app.component.css" />
+    <None Include="devComTestApp\src\app\app.component.less" />
     <Content Include="devComTestApp\src\app\app.component.html" />
     <Content Include="devComTestApp\src\favicon.ico" />
     <Content Include="devComTestApp\src\index.html" />
-    <Content Include="devComTestApp\src\styles.css" />
+    <Content Include="devComTestApp\webpack.config.js" />
     <Content Include="favicon.ico" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -254,7 +253,6 @@
     <Content Include="devComTestApp\.angular-cli.json" />
     <Content Include="devComTestApp\.editorconfig" />
     <Content Include="devComTestApp\e2e\tsconfig.e2e.json" />
-    <Content Include="devComTestApp\package-lock.json" />
     <Content Include="devComTestApp\package.json" />
     <Content Include="devComTestApp\README.md" />
     <Content Include="devComTestApp\src\assets\.gitkeep" />
@@ -262,6 +260,7 @@
     <Content Include="devComTestApp\src\tsconfig.spec.json" />
     <Content Include="devComTestApp\tsconfig.json" />
     <Content Include="devComTestApp\tslint.json" />
+    <Content Include="devComTestApp\src\styles.less" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -281,6 +280,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="devComTestApp\e2e\app.e2e-spec.ts" />
     <TypeScriptCompile Include="devComTestApp\e2e\app.po.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.module.ts" />
@@ -330,6 +330,12 @@
     <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
+  <PropertyGroup>
+    <PreBuildEvent>echo "cd $(ProjectDir)devComTestApp" &amp;&amp;^
+cd "$(ProjectDir)devComTestApp" &amp;&amp;^
+echo "building devComTestApp" &amp;&amp;^
+ng build</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

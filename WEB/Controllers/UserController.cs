@@ -3,6 +3,7 @@
     using BLL.Interfaces.IBLs;
     using System.Web.Http;
 
+    [RoutePrefix("user")]
     public class UserController : ApiController
     {
         private IUserBL userBL;
