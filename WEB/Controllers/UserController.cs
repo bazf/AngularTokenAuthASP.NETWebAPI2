@@ -1,6 +1,6 @@
 ﻿namespace WEB.Controllers
 {
-    using BLL.Interfaces;
+    using BLL.Interfaces.IBLs;
     using System.Web.Http;
 
     public class UserController : ApiController

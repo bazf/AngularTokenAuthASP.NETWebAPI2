@@ -1,6 +1,6 @@
 ﻿namespace BLL.BLs
 {
-    using BLL.Interfaces;
+    using BLL.Interfaces.IBLs;
     using BLL.Mapping;
     using DAL.Interfaces;
 

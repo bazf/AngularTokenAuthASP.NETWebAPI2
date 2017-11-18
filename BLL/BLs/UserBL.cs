@@ -1,7 +1,7 @@
 ﻿namespace BLL.BLs
 {
     using System.Collections.Generic;
-    using BLL.Interfaces;
+    using BLL.Interfaces.IBLs;
     using Core.DTOs.UserDTOs;
     using DAL.Interfaces;
     using BLL.Mapping;

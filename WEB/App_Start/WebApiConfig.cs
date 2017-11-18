@@ -10,8 +10,6 @@
     {
         public static void Register(HttpConfiguration config)
         {
-            config.DependencyResolver = new NinjectResolver();
-
             // Web API routes
             config.MapHttpAttributeRoutes();
 
