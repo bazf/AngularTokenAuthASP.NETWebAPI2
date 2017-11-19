@@ -1,0 +1,16 @@
+//@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@images-path: '../../dist/assets/images/';
+@background: url("@{images-path}bg.jpg");
+
+.app-main-container {
+  .app-title-text {
+    margin-top: 0;
+    padding-top: 1%;
+  }
+  text-align: center;
+  background-image: @background;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}

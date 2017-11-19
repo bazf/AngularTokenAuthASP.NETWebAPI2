@@ -1,33 +1,33 @@
 @smartphones: ~"only screen and (max-width: 600px)";
 @tablets: ~"only screen and (max-width: 900px)";
 
-.login-container {
+.register-container {
   margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .login-card {
+  .register-card {
     width: 30%;
 
-    .login-card-container {
+    .register-card-container {
       display: flex;
       flex-direction: column;
     }
 
-    .login-card-container > * {
+    .register-card-container > * {
       width: 100%;
     }
   }
 
   @media @smartphones {
-    .login-card {
+    .register-card {
       width: 75%;
     }
   }
 
   @media @tablets {
-    .login-card {
+    .register-card {
       width: 55%;
     }
   }
