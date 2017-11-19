@@ -53,7 +53,17 @@ namespace WEB.Providers
             //context.Validated(identity);
 
             var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            identity.AddClaim(new Claim(ClaimTypes.Role, "admin"));
+
+            var roles = await authService.GetAllRoles(user.Id);
+
+            if (roles.Count() > 0)
+            {
+                foreach (var role in roles)
+                {
+                    identity.AddClaim(new Claim(ClaimTypes.Role, role));
+                }
+            }
+
 
             var rolesString = await authService.GetAllRolesJson(user.Id);
             AuthenticationProperties properties = CreateProperties(user.UserName, rolesString, user.Id);

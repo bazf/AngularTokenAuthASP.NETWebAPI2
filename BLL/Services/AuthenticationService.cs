@@ -8,42 +8,55 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     public class AuthenticationService : IAuthenticationService, IDisposable
     {
-        private DevComDbContext _ctx;
+        private DevComDbContext ctx;
 
-        private UserManager<UserEntity> _userManager;
+        private UserManager<UserEntity> userManager;
 
         public AuthenticationService()
         {
-            _ctx = new DevComDbContext();
-            _userManager = new UserManager<UserEntity>(new UserStore<UserEntity>(_ctx));
+            ctx = new DevComDbContext();
+            userManager = new UserManager<UserEntity>(new UserStore<UserEntity>(ctx));
         }
 
         public async Task<IdentityResult> RegisterUser(UserRegisterDTO userModel)
         {
             UserEntity user = new UserEntity()
             {
-                UserName = userModel.UserName
+                UserName = userModel.UserName,
             };
 
-            var result = await _userManager.CreateAsync(user, userModel.Password);
+            var result = await userManager.CreateAsync(user, userModel.Password);
+
+            if (result.Succeeded)
+            {
+                await userManager.AddToRolesAsync(user.Id, "user");
+            }
 
             return result;
         }
 
         public async Task<UserEntity> FindUser(string userName, string password)
         {
-            UserEntity user = await _userManager.FindAsync(userName, password);
+            UserEntity user = await userManager.FindAsync(userName, password);
 
             return user;
         }
 
+        public async Task<IEnumerable<string>> GetAllRoles(string userId)
+        {
+            var listRoles = await userManager.GetRolesAsync(userId);
+
+            return listRoles;
+        }
+
         public async Task<string> GetAllRolesJson(string userId)
         {
-            var listRoles = await _userManager.GetRolesAsync(userId);
+            var listRoles = await userManager.GetRolesAsync(userId);
             var rolesString = JsonConvert.SerializeObject(listRoles);
 
             return rolesString;
@@ -51,8 +64,8 @@
 
         public void Dispose()
         {
-            _ctx.Dispose();
-            _userManager.Dispose();
+            ctx.Dispose();
+            userManager.Dispose();
         }
     }
 }

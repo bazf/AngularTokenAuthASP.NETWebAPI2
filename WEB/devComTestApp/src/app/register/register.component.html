@@ -2,20 +2,20 @@
   <mat-card layout="column" class="register-card ">
     <form class="register-card-container">
       <mat-form-field class="register-full-width">
-        <input matInput flex="100%" placeholder="User Name">
+        <input [(ngModel)]="userName" matInput flex="100%" placeholder="User Name" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
 
       <mat-form-field class="register-full-width">
-        <input matInput placeholder="Password">
+        <input [(ngModel)]="password" matInput placeholder="Password" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
 
       <mat-form-field class="register-full-width">
-        <input matInput placeholder="Confirm password">
+        <input [(ngModel)]="confirmPassword" matInput placeholder="Confirm password" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
     </form>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary">Go!</button>
+      <button (click)="register()" mat-raised-button color="primary">Go!</button>
     </mat-card-actions>
   </mat-card>
 </div>

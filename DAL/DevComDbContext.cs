@@ -10,9 +10,9 @@ namespace DAL
         public DevComDbContext()
             : base("name=DevComDbContext")
         {
-            //Database.SetInitializer(new CreateDatabaseIfNotExists<DevComDbContext>());
-            Database.SetInitializer(new DropCreateDatabaseAlways<DevComDbContext>());
-            //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<DevComDbContext>());
+            //Database.SetInitializer(new CustomCreateDatabaseIfNotExists());
+            Database.SetInitializer(new CustomDropCreateDatabaseAlways());
+            //Database.SetInitializer(new CustomDropCreateDatabaseIfModelChanges());
         }
 
         public virtual DbSet<UserNoteEntity> UserNotes { get; set; }

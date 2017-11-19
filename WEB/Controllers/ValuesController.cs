@@ -15,10 +15,18 @@ namespace WEB.Controllers
             return new string[] { "value1", "value2" };
         }
 
+        [Authorize]
         // GET api/values/5
         public string Get(int id)
         {
             return "value";
+        }
+
+        [Authorize(Roles = "admin")]
+        [HttpGet, Route("adm")]
+        public string GetV(int id)
+        {
+            return "value for admin";
         }
 
         // POST api/values

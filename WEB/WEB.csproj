@@ -211,6 +211,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="MVCControllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -290,6 +291,8 @@
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\auth.service.spec.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\auth.service.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\home\home.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\home\home.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\login\login.component.spec.ts" />
