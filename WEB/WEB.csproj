@@ -211,7 +211,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="MVCControllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DependencyResolver\DependencyRegistrator.cs" />
@@ -231,6 +231,8 @@
     <Content Include="devComTestApp\protractor.conf.js" />
     <None Include="devComTestApp\src\app\app.component.less" />
     <Content Include="devComTestApp\src\app\app.component.html" />
+    <Content Include="devComTestApp\src\app\home\home.component.html" />
+    <Content Include="devComTestApp\src\app\login\login.component.html" />
     <Content Include="devComTestApp\src\favicon.ico" />
     <Content Include="devComTestApp\src\index.html" />
     <Content Include="devComTestApp\webpack.config.js" />
@@ -261,6 +263,8 @@
     <Content Include="devComTestApp\tsconfig.json" />
     <Content Include="devComTestApp\tslint.json" />
     <Content Include="devComTestApp\src\styles.less" />
+    <Content Include="devComTestApp\src\app\home\home.component.less" />
+    <Content Include="devComTestApp\src\app\login\login.component.less" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -284,6 +288,10 @@
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\home\home.component.spec.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\login\login.component.spec.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\login\login.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="devComTestApp\src\environments\environment.ts" />
     <TypeScriptCompile Include="devComTestApp\src\main.ts" />
@@ -334,7 +342,7 @@
     <PreBuildEvent>echo "cd $(ProjectDir)devComTestApp" &amp;&amp;^
 cd "$(ProjectDir)devComTestApp" &amp;&amp;^
 echo "building devComTestApp" &amp;&amp;^
-ng build</PreBuildEvent>
+npm run build</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

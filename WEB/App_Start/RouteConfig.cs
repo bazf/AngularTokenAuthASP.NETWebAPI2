@@ -17,7 +17,7 @@ namespace WEB
 
             routes.MapPageRoute(
             routeName: "AngularRoute",
-            routeUrl: "index",
+            routeUrl: "",
             physicalFile: "~/devComTestApp/dist/index.html");
 
             routes.MapRoute(
