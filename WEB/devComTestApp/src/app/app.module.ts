@@ -7,7 +7,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 
+import { ActivatedRoute } from '@angular/router';
 import { AppRoutingModule } from './/app-routing.module';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +19,7 @@ import { RegisterComponent } from './register/register.component';
 import { AuthService } from './auth.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DataService } from './data.service';
 
 
 @NgModule({
@@ -29,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     BrowserAnimationsModule,
     FormsModule,
     MatButtonModule,
@@ -38,7 +42,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

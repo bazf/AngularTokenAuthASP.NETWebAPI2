@@ -7,24 +7,25 @@ using System.Web.Http;
 
 namespace WEB.Controllers
 {
+    [RoutePrefix("api/values")]
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public dynamic Get()
         {
-            return new string[] { "value1", "value2" };
+            return new { id = 1, name = "SomeName" };
         }
 
-        [Authorize]
+
         // GET api/values/5
-        public string Get(int id)
+        [Authorize, HttpGet, Route("one"),]
+        public string GetOne()
         {
             return "value";
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpGet, Route("adm")]
-        public string GetV(int id)
+        [HttpGet, Route("foradm"), Authorize(Roles = "admin")]
+        public string GetAdm()
         {
             return "value for admin";
         }

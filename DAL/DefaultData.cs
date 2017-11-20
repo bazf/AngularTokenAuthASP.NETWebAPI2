@@ -10,8 +10,8 @@
         {
             try
             {
-                context.Roles.AddOrUpdate(new IdentityRole("admin"));
-                context.Roles.AddOrUpdate(new IdentityRole("user"));
+                    context.Roles.AddOrUpdate(new IdentityRole("admin"));
+                    context.Roles.AddOrUpdate(new IdentityRole("user"));
             }
             catch (Exception ex)
             {

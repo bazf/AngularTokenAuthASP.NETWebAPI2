@@ -23,7 +23,21 @@
             userManager = new UserManager<UserEntity>(new UserStore<UserEntity>(ctx));
         }
 
-        public async Task<IdentityResult> RegisterUser(UserRegisterDTO userModel)
+        public async Task<bool> RegisterDefaultUsers()
+        {
+            UserRegisterDTO user = new UserRegisterDTO()
+            {
+                UserName = "administrator",
+                Password = "administrator",
+                ConfirmPassword = "administrator"
+            };
+
+            var result = await RegisterUser(user, "admin");
+
+            return result.Succeeded;
+        }
+
+        public async Task<IdentityResult> RegisterUser(UserRegisterDTO userModel, string role = "user")
         {
             UserEntity user = new UserEntity()
             {
@@ -34,7 +48,7 @@
 
             if (result.Succeeded)
             {
-                await userManager.AddToRolesAsync(user.Id, "user");
+                await userManager.AddToRolesAsync(user.Id, role);
             }
 
             return result;

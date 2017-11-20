@@ -35,7 +35,7 @@
                 return errorResult;
             }
 
-            return Ok();
+            return Ok(new { result = "success" });
         }
 
         protected override void Dispose(bool disposing)

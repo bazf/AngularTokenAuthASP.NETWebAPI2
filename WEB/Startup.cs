@@ -36,13 +36,15 @@ namespace WEB
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(1),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
                 Provider = new DevComTestAuthProvider(NinjectWebCommon.Kernel.GetService<IAuthenticationService>()),
             };
 
             // Token Generation
             app.UseOAuthAuthorizationServer(OAuthServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+
+            NinjectWebCommon.Kernel.GetService<IAuthenticationService>().RegisterDefaultUsers();
         }
     }
 }

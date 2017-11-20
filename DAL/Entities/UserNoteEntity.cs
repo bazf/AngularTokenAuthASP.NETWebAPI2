@@ -7,10 +7,13 @@
     {
         public int Id { get; set; }
 
-        [Required]
         public string Title { get; set; }
 
-        [StringLength(100)]
         public string Text { get; set; }
+
+        [ForeignKey("UserEntity")]
+        public string UserId { get; set; }
+
+        public virtual UserEntity UserEntity { get; set; }
     }
 }

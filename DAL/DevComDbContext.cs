@@ -4,6 +4,8 @@ namespace DAL
     using DAL.Entities;
     using Microsoft.AspNet.Identity.EntityFramework;
     using System.Data.Entity;
+    using System.Data.Entity.Validation;
+    using System.Linq;
 
     public class DevComDbContext : IdentityDbContext<UserEntity>
     {
@@ -24,6 +26,7 @@ namespace DAL
             modelBuilder.Entity<IdentityRole>().Property(r => r.Name).HasMaxLength(128);
 
             modelBuilder.Configurations.Add(new UserEntityConfiguration());
+            modelBuilder.Configurations.Add(new UserNoteEntityConfiguration());
 
             ConfigureIdentityTables(modelBuilder);
         }
@@ -34,6 +37,26 @@ namespace DAL
             modelBuilder.Entity<IdentityUserRole>().ToTable("user_roles");
             modelBuilder.Entity<IdentityUserLogin>().ToTable("user_logins");
             modelBuilder.Entity<IdentityUserClaim>().ToTable("user_claims");
+        }
+
+        public override int SaveChanges()
+        {
+            try
+            {
+                return base.SaveChanges();
+            }
+            catch (DbEntityValidationException ex)
+            {
+                var errorMessages = ex.EntityValidationErrors
+                        .SelectMany(x => x.ValidationErrors)
+                        .Select(x => x.ErrorMessage);
+
+                var fullErrorMessage = string.Join("; ", errorMessages);
+
+                var exceptionMessage = string.Concat(ex.Message, " The validation errors are: ", fullErrorMessage);
+
+                throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
+            }
         }
     }
 }

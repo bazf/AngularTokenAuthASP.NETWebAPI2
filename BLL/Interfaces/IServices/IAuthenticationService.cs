@@ -12,10 +12,12 @@
 
         Task<UserEntity> FindUser(string userName, string password);
 
+        Task<bool> RegisterDefaultUsers();
+
         Task<IEnumerable<string>> GetAllRoles(string userId);
 
         Task<string> GetAllRolesJson(string userId);
 
-        Task<IdentityResult> RegisterUser(UserRegisterDTO userModel);
+        Task<IdentityResult> RegisterUser(UserRegisterDTO userModel, string role = "user");
     }
 }

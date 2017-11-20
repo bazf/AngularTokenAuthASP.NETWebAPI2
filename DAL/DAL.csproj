@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\UserEntityConfiguration.cs" />
+    <Compile Include="Configurations\UserNoteEntityConfiguration.cs" />
     <Compile Include="CustomDbInitializers.cs" />
     <Compile Include="DefaultData.cs" />
     <Compile Include="DevComDbContext.cs" />

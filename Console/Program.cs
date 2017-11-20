@@ -1,6 +1,7 @@
 ﻿namespace Console
 {
     using DAL;
+    using static System.Console;
 
     class Program
     {
@@ -8,9 +9,10 @@
         {
             using (var db = new DevComDbContext())
             {
+                WriteLine(db.Roles.Find("1"));
             }
 
-            System.Console.ReadKey();
+            ReadKey();
         }
     }
 }

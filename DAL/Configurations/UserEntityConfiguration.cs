@@ -8,9 +8,6 @@
         public UserEntityConfiguration()
         {
             ToTable("users");
-
-            Property(u => u.UserName).HasMaxLength(128);
-            Property(u => u.Email).HasMaxLength(128);
         }
     }
 }
