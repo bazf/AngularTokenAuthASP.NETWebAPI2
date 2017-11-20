@@ -11,18 +11,23 @@ import { DataService } from '../data.service';
 })
 export class LoginComponent implements OnInit {
 
-  userName: string = "aaa";
-  password: string = "qazwsx";
+  userName: string = "user";
+  password: string = "userpassword";
 
   authMessage: string = "";
 
 
   test: TestClass = new TestClass();
 
-  constructor(private authService: AuthService, private router: Router, private dataService: DataService) { }
+  constructor(private authService: AuthService,
+              private router: Router,
+              private dataService: DataService) { }
 
   ngOnInit() {
   }
+
+
+
 
   login(): void {
     this.authService.login(this.userName, this.password).then(r => {
@@ -38,7 +43,7 @@ export class LoginComponent implements OnInit {
 
 
   testData(): void {
-    var G = this.dataService.get<string>("values/one").subscribe(r => {
+    var G = this.dataService.get<string>("values/one", 3).subscribe(r => {
       this.test.name = r;
     });
   }

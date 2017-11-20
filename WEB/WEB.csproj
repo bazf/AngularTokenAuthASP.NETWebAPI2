@@ -230,10 +230,15 @@
     <Content Include="devComTestApp\.gitignore" />
     <Content Include="devComTestApp\karma.conf.js" />
     <Content Include="devComTestApp\protractor.conf.js" />
+    <Content Include="devComTestApp\src\app\administration\administration.component.less" />
+    <Content Include="devComTestApp\src\app\all-notes\all-notes.component.less" />
     <None Include="devComTestApp\src\app\app.component.less" />
+    <Content Include="devComTestApp\src\app\administration\administration.component.html" />
+    <Content Include="devComTestApp\src\app\all-notes\all-notes.component.html" />
     <Content Include="devComTestApp\src\app\app.component.html" />
     <Content Include="devComTestApp\src\app\home\home.component.html" />
     <Content Include="devComTestApp\src\app\login\login.component.html" />
+    <Content Include="devComTestApp\src\app\my-notes\my-notes.component.html" />
     <Content Include="devComTestApp\src\app\register\register.component.html" />
     <Content Include="devComTestApp\src\assets\images\bg.jpg" />
     <Content Include="devComTestApp\src\favicon.ico" />
@@ -269,6 +274,7 @@
     <Content Include="devComTestApp\src\app\home\home.component.less" />
     <Content Include="devComTestApp\src\app\login\login.component.less" />
     <Content Include="devComTestApp\src\app\register\register.component.less" />
+    <Content Include="devComTestApp\src\app\my-notes\my-notes.component.less" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +294,10 @@
   <ItemGroup>
     <TypeScriptCompile Include="devComTestApp\e2e\app.e2e-spec.ts" />
     <TypeScriptCompile Include="devComTestApp\e2e\app.po.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\administration\administration.component.spec.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\administration\administration.component.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\all-notes\all-notes.component.spec.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\all-notes\all-notes.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.ts" />
@@ -300,6 +310,8 @@
     <TypeScriptCompile Include="devComTestApp\src\app\home\home.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\login\login.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\my-notes\my-notes.component.spec.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\my-notes\my-notes.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\register\register.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\register\register.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\environments\environment.prod.ts" />

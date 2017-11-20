@@ -5,6 +5,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 
 import 'rxjs/add/operator/toPromise';
+import { Router } from '@angular/router';
 
 export class CurrentUser {
   access_token: string;
@@ -21,10 +22,14 @@ export class CurrentUser {
 export class AuthService {
   public token: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     // set token if saved in local storage
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
+  }
+
+  isAuth(): boolean {
+    return JSON.parse(localStorage.getItem('currentUser')) && true;
   }
 
   login(userName: string, password: string): Promise<string> {
@@ -55,6 +60,8 @@ export class AuthService {
             issued: currentUser.issued,
             expires: currentUser.expires
           }));
+
+          this.token = currentUser.access_token;
 
           resolve("success");
         },
@@ -97,5 +104,6 @@ export class AuthService {
     // clear token remove user from local storage to log user out
     this.token = null;
     localStorage.removeItem('currentUser');
+    this.router.navigate(['login']);
   }
 }

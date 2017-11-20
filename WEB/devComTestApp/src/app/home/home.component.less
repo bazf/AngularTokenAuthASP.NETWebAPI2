@@ -1,0 +1,46 @@
+@home-card-color: rgba(255, 255, 255, 0.5);
+
+a {
+  color:black;
+  text-decoration: none;
+}
+
+a:focus {
+  color: #3F51B5;
+}
+
+.mat-drawer-container {
+  background-color: rgba(0,0,0,.0);
+}
+
+.toggle-button {
+  background-color: #3F51B5;
+}
+
+.home-sidenav-container {
+  text-align: left;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+
+  .home-sidenav {
+    .toggle-button {
+      top: 24px;
+      left: 24px;
+      margin-bottom: 15px;
+    }
+
+    .tabs-container {
+      margin-top: 50%;
+    }
+  }
+
+  .home-main-card {
+    height: 70vh;
+    background-color: @home-card-color;
+
+    .home-content-container {
+      text-align: center;
+    }
+  }
+}

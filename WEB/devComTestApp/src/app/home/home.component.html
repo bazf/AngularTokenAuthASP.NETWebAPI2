@@ -1,3 +1,31 @@
-<p>
-  home works!
-</p>
+<div class="app-home-container">
+  <mat-sidenav-container class="home-sidenav-container">
+    <mat-sidenav #sidenav mode="over" class="home-sidenav">
+      <button mat-mini-fab class="example-fab toggle-button" (click)="sidenav.toggle()"></button>
+
+      <div class="tabs-container">
+        <mat-toolbar>
+          <a [routerLink]="['my-notes']">My Notes</a>
+        </mat-toolbar>
+        <mat-toolbar>
+          <a [routerLink]="['all-notes']">All Notes</a>
+        </mat-toolbar>
+        <mat-toolbar>
+          <a [routerLink]="['administration']">Administration</a>
+        </mat-toolbar>
+        <mat-toolbar>
+          <a (click)="logout()">Logout</a>
+        </mat-toolbar>
+      </div>
+    </mat-sidenav>
+
+    <mat-card layout="column" class="home-main-card">
+      <button mat-mini-fab class="example-fab toggle-button" (click)="sidenav.toggle()"></button>
+
+      <div class="home-content-container">
+        <router-outlet></router-outlet>
+      </div>
+
+    </mat-card>
+  </mat-sidenav-container>
+</div>

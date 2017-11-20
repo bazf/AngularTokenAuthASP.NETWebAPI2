@@ -17,8 +17,8 @@ export class DataService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  get<T>(url: string): Observable<T> {
-    var currentUrl = this.baseUrl + url;
+  get<T>(url: string, parameter: any = ""): Observable<T> {
+    var currentUrl = this.baseUrl + url + "/" + parameter.toString();
 
     let httpOptions = {
       headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.authService.token })

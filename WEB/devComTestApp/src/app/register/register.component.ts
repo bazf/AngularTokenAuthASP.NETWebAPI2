@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  userName: string = "aaa";
-  password: string = "qazwsx";
-  confirmPassword: string = "qazwsx";
+  userName: string = "user";
+  password: string = "userpassword";
+  confirmPassword: string = "userpassword";
 
   constructor(private authService: AuthService, private router: Router) { }
 
