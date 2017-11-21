@@ -10,7 +10,7 @@
         <input (ngModelChange)="onChange()" [(ngModel)]="userName" matInput flex="100%" placeholder="User Name" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
       <mat-form-field class="login-full-width">
-        <input (ngModelChange)="onChange()" [(ngModel)]="password" matInput placeholder="Password" [ngModelOptions]="{standalone: true}">
+        <input type="password" (ngModelChange)="onChange()" [(ngModel)]="password" matInput placeholder="Password" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
     </form>
 
@@ -19,6 +19,3 @@
     </mat-card-actions>
   </mat-card>
 </div>
-
-<button mat-raised-button (click)="testData()" >Register</button>
-{{test.id}} oo {{test.name}}

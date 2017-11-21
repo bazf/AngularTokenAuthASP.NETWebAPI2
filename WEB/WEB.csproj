@@ -212,6 +212,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\UserNoteController.cs" />
     <Compile Include="MVCControllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -312,6 +313,7 @@
     <TypeScriptCompile Include="devComTestApp\src\app\login\login.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\my-notes\my-notes.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\my-notes\my-notes.component.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\note.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\register\register.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\register\register.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\environments\environment.prod.ts" />

@@ -1,3 +1,30 @@
 <div class="my-notes-container">
-  My Notes Here!
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="newNote.title" placeholder="Title" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input matInput [(ngModel)]="newNote.text" placeholder="Text" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+
+    <button (click)="addNote()" mat-raised-button color="primary">Add</button>
+  </form>
+
+  <div *ngFor="let note of notes" class="note-container">
+    <mat-card class="note-card">
+
+      <mat-card-title class="note-card-title">{{note.title}}</mat-card-title>
+
+      <mat-card-content class="note-card-content">
+        <p>
+          {{note.text}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions class="buttons-containers">
+        <button class="remove-button" *ngIf="isAdmin" (click)="removeNote(note.id)" mat-raised-button>Remove</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>

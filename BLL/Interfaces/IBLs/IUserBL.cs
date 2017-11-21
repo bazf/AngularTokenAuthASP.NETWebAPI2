@@ -2,9 +2,10 @@
 {
     using Core.DTOs.UserDTOs;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     public interface IUserBL
     {
-        IEnumerable<UserDTO> GetAll();
+        Task<List<UserDTO>> GetAllAsync();
     }
 }

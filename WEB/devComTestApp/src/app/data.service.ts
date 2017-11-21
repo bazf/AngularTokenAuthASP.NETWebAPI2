@@ -13,8 +13,6 @@ export class DataService {
 
   baseUrl: string = "api/";
 
-
-
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   get<T>(url: string, parameter: any = ""): Observable<T> {
@@ -28,17 +26,25 @@ export class DataService {
       .map((res: any) => res);
   }
 
-  //get(url: string): Promise<Object> {
-  //  var currentUrl = "api/values";// this.baseUrl + url;
-  //  let promise = new Promise<Response>((resolve, reject) => {
-  //    this.http.get<Response>(currentUrl)
-  //      .map((res: Response) => res.json())
-  //      .toPromise()
-  //      .then(r => {
-  //        var j = r;
-  //      resolve(j)
-  //    });
-  //  });
-  //  return promise;
-  //}
+  delete<T>(url: string, parameter: any = ""): Observable<T> {
+    var currentUrl = this.baseUrl + url + "/" + parameter.toString();
+
+    let httpOptions = {
+      headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.authService.token })
+    };
+
+    return this.http.delete<T>(currentUrl, httpOptions)
+      .map((res: any) => res);
+  }
+
+  post<T>(url: string, data: any = {}, parameter: any = ""): Observable<T> {
+    var currentUrl = this.baseUrl + url + "/" + parameter.toString();
+
+    let httpOptions = {
+      headers: new HttpHeaders({ 'Authorization': 'Bearer ' + this.authService.token })
+    };
+
+    return this.http.post<T>(currentUrl, data, httpOptions)
+      .map((res: any) => res);
+  }
 }

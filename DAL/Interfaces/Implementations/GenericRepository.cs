@@ -1,8 +1,10 @@
 ﻿namespace DAL.Interfaces.Implementations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Linq;
+    using System.Threading.Tasks;
 
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
@@ -19,6 +21,23 @@
         public IQueryable<TEntity> Query()
         {
             return dbSet.AsQueryable();
+        }
+
+        public IEnumerable<TEntity> GetAll()
+        {
+            try
+            {
+                return dbSet.ToList();
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
+
+        public async Task<List<TEntity>> GetAllAsync()
+        {
+            return await dbSet.ToListAsync();
         }
 
         public TEntity GetById(params object[] id)

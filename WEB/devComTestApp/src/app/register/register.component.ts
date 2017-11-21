@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
   password: string = "userpassword";
   confirmPassword: string = "userpassword";
 
+  regMessage: string = "";
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -25,10 +27,17 @@ export class RegisterComponent implements OnInit {
         if (r === "success") {
           this.authService.login(this.userName, this.password).then(lr => {
             if (lr === "success") {
-              this.router.navigate(['home']);
+              this.router.navigate(['home/my-notes']);
             }
           });
         }
+      },
+      e => {
+        this.regMessage = "Name user is already taken.";
       });
+  }
+
+  onChange(): void {
+    this.regMessage = "";
   }
 }

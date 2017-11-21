@@ -1,18 +1,22 @@
 <button mat-raised-button color="primary" routerLink="/login">Go to Login page</button>
 
+<div class="reg-message-container">
+  <b>{{regMessage}}</b>
+</div>
+
 <div class="register-container">
   <mat-card layout="column" class="register-card ">
     <form class="register-card-container">
       <mat-form-field class="register-full-width">
-        <input [(ngModel)]="userName" matInput flex="100%" placeholder="User Name" [ngModelOptions]="{standalone: true}">
+        <input (ngModelChange)="onChange()" [(ngModel)]="userName" matInput flex="100%" placeholder="User Name" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
 
       <mat-form-field class="register-full-width">
-        <input [(ngModel)]="password" matInput placeholder="Password" [ngModelOptions]="{standalone: true}">
+        <input type="password" [(ngModel)]="password" matInput placeholder="Password" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
 
       <mat-form-field class="register-full-width">
-        <input [(ngModel)]="confirmPassword" matInput placeholder="Confirm password" [ngModelOptions]="{standalone: true}">
+        <input type="password" [(ngModel)]="confirmPassword" matInput placeholder="Confirm password" [ngModelOptions]="{standalone: true}">
       </mat-form-field>
     </form>
 

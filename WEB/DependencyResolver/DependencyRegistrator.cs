@@ -18,6 +18,7 @@
             kernel.Bind<IMapper>().To<Mapper>();
 
             kernel.Bind<IUserBL>().To<UserBL>();
+            kernel.Bind<IUserNoteBL>().To<UserNoteBL>();
 
         }
     }

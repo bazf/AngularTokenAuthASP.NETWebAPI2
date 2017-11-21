@@ -9,7 +9,10 @@ import { AuthService } from '../auth.service';
 })
 export class HomeComponent implements OnInit {
 
+  isAdmin: boolean = false;
+
   ngOnInit() {
+    this.isAdmin = this.authService.isAdmin;
   }
 
   constructor(private authService: AuthService) {

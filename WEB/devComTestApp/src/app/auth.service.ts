@@ -21,11 +21,18 @@ export class CurrentUser {
 @Injectable()
 export class AuthService {
   public token: string;
+  public isAdmin: boolean;
 
   constructor(private http: HttpClient, private router: Router) {
     // set token if saved in local storage
     var currentUser = JSON.parse(localStorage.getItem('currentUser'));
     this.token = currentUser && currentUser.token;
+    let user = new CurrentUser();
+    Object.assign(user, currentUser);
+    if (user.roles != undefined) {
+      this.isAdmin = user.roles.includes("admin");
+      localStorage.setItem("isAdmin", this.isAdmin.toString());
+    }
   }
 
   isAuth(): boolean {
@@ -62,6 +69,9 @@ export class AuthService {
           }));
 
           this.token = currentUser.access_token;
+
+          this.isAdmin = currentUser.roles.includes("admin");
+          localStorage.setItem("isAdmin", this.isAdmin.toString());
 
           resolve("success");
         },
@@ -103,7 +113,9 @@ export class AuthService {
   logout(): void {
     // clear token remove user from local storage to log user out
     this.token = null;
+    this.isAdmin = false;
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('isAdmin');
     this.router.navigate(['login']);
   }
 }

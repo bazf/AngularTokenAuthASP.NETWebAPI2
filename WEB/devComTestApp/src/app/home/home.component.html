@@ -10,7 +10,7 @@
         <mat-toolbar>
           <a [routerLink]="['all-notes']">All Notes</a>
         </mat-toolbar>
-        <mat-toolbar>
+        <mat-toolbar *ngIf="isAdmin">
           <a [routerLink]="['administration']">Administration</a>
         </mat-toolbar>
         <mat-toolbar>

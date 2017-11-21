@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
 
 import { ActivatedRoute } from '@angular/router';
 import { AppRoutingModule } from './/app-routing.module';
@@ -44,6 +45,7 @@ import { AdministrationComponent } from './administration/administration.compone
     MatSidenavModule,
     MatCardModule,
     MatInputModule,
+    MatTableModule,
     HttpClientModule
   ],
   providers: [

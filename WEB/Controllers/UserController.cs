@@ -1,9 +1,13 @@
 ﻿namespace WEB.Controllers
 {
     using BLL.Interfaces.IBLs;
+    using Core.DTOs.UserDTOs;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
     using System.Web.Http;
 
-    [RoutePrefix("api/user")]
+    [Authorize(Roles = "admin"), RoutePrefix("api/user")]
     public class UserController : ApiController
     {
         private IUserBL userBL;
@@ -13,12 +17,10 @@
             this.userBL = userBL;
         }
 
-        [HttpGet, Route("")]
-        public IHttpActionResult GetAll()
+        [HttpGet, Route("all")]
+        public async Task<List<UserDTO>> GetAll()
         {
-            return Ok(userBL.GetAll());
-
-            //return Json(productBL.GetAllProducts());
+            return await userBL.GetAllAsync();
         }
 
     }

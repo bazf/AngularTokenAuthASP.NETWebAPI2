@@ -4,21 +4,40 @@
     using BLL.Interfaces.IBLs;
     using Core.DTOs.UserDTOs;
     using DAL.Interfaces;
+    using System.Linq;
+    using System.Threading.Tasks;
     using BLL.Mapping;
+    using System;
+    using BLL.Interfaces.IServices;
 
     public class UserBL : BaseBL, IUserBL
     {
         private readonly IMapper mapper;
+        private IAuthenticationService authService;
 
-        public UserBL(IUnitOfWorkFactory factory, IMapper mapper)
+        public UserBL(IUnitOfWorkFactory factory, IMapper mapper, IAuthenticationService authService)
             : base(factory)
         {
             this.mapper = mapper;
+            this.authService = authService;
         }
 
-        public IEnumerable<UserDTO> GetAll()
+        public async Task<List<UserDTO>> GetAllAsync()
         {
-            return new List<UserDTO> { new UserDTO { UserName = "Mark" } };
+            try
+            {
+                return await UseDbAsync(async x =>
+                 {
+                     var dbUsers = await x.UserRepository.GetAllAsync();
+                     return mapper.Map(dbUsers, new List<UserDTO>());
+
+                 });
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
+            }
         }
     }
 }

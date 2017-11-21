@@ -5,6 +5,9 @@
     using AutoMapper.QueryableExtensions;
     using Core.DTOs.UserDTOs;
     using DAL.Entities;
+    using Core.DTOs.UserNoteDTOs;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     public class Mapper : IMapper
     {
@@ -16,7 +19,11 @@
         {
             configurations = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<UserEntity, UserDTO>().ReverseMap();
+                cfg.CreateMap<UserEntity, UserDTO>();
+                cfg.CreateMap<Task<List<UserEntity>>, Task<List<UserDTO>>>();
+
+                cfg.CreateMap<UserNoteEntity, UserNoteDTO>().ReverseMap();
+                cfg.CreateMap<NewUserNoteDTO, UserNoteEntity>();
             });
 
             mapper = configurations.CreateMapper();
@@ -32,9 +39,9 @@
             return mapper.Map<TSource, TDest>(source);
         }
 
-        public void Map<TSource, TDest>(TSource source, TDest dest)
+        public TDest Map<TSource, TDest>(TSource source, TDest dest)
         {
-            mapper.Map(source, dest);
+            return mapper.Map(source, dest);
         }
     }
 }

@@ -1,3 +1,18 @@
-<p>
-  all-notes works!
-</p>
+<div class="all-notes-container">
+  <div *ngFor="let note of notes" class="note-container">
+    <mat-card class="note-card">
+
+      <mat-card-title class="note-card-title">{{note.title}}</mat-card-title>
+
+      <mat-card-content class="note-card-content">
+        <p>
+          {{note.text}}
+        </p>
+      </mat-card-content>
+
+      <mat-card-actions class="buttons-containers">
+        <button class="remove-button" *ngIf="isAdmin" (click)="removeNote(note.id)" mat-raised-button>Remove</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

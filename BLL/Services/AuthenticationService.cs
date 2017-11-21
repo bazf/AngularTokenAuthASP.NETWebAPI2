@@ -3,12 +3,14 @@
     using BLL.Interfaces.IServices;
     using Core.DTOs.UserDTOs;
     using DAL;
+    using System.Linq;
     using DAL.Entities;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
+    using System.Security.Claims;
     using System.Threading.Tasks;
 
     public class AuthenticationService : IAuthenticationService, IDisposable
@@ -52,6 +54,13 @@
             }
 
             return result;
+        }
+
+        public async Task<ClaimsIdentity> CreateIdentity(UserEntity user, string authenticationType)
+        {
+                var userIdentity = await userManager.CreateIdentityAsync(user, authenticationType);
+
+                return userIdentity;
         }
 
         public async Task<UserEntity> FindUser(string userName, string password)

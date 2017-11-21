@@ -16,9 +16,6 @@ export class LoginComponent implements OnInit {
 
   authMessage: string = "";
 
-
-  test: TestClass = new TestClass();
-
   constructor(private authService: AuthService,
               private router: Router,
               private dataService: DataService) { }
@@ -26,14 +23,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
-
   login(): void {
     this.authService.login(this.userName, this.password).then(r => {
       if (r === "success") {
         this.authMessage = r;
-        this.router.navigate(['home']);
+        this.router.navigate(['home/my-notes']);
       }
     },
       e => {
@@ -41,19 +35,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-
-  testData(): void {
-    var G = this.dataService.get<string>("values/one", 3).subscribe(r => {
-      this.test.name = r;
-    });
-  }
-
   onChange(): void {
     this.authMessage = "";
   }
-}
-
-export class TestClass {
-  id: number;
-  name: string;
 }

@@ -20,12 +20,22 @@
             }
         }
 
+        protected TEntity UseDbAsync<TEntity>(Func<IUnitOfWork, TEntity> func)
+        {
+            return func(factory.Create());
+        }
+
         protected void UseDb(Action<IUnitOfWork> func)
         {
             using (IUnitOfWork unitOfWork = factory.Create())
             {
                 func(unitOfWork);
             }
+        }
+
+        protected void UseDbAcync(Action<IUnitOfWork> func)
+        {
+            func(factory.Create());
         }
     }
 }

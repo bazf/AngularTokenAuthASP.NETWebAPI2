@@ -1,17 +1,15 @@
-﻿using BLL.Interfaces.IServices;
-using BLL.Services;
-using DAL.Entities;
-using Microsoft.Owin.Security;
-using Microsoft.Owin.Security.OAuth;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System.Web;
-
-namespace WEB.Providers
+﻿namespace WEB.Providers
 {
+    using BLL.Interfaces.IServices;
+    using BLL.Services;
+    using DAL.Entities;
+    using Microsoft.Owin.Security;
+    using Microsoft.Owin.Security.OAuth;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Security.Claims;
+    using System.Threading.Tasks;
+
     public class DevComTestAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly IAuthenticationService authService;
@@ -28,8 +26,6 @@ namespace WEB.Providers
 
         public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-
-            //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
             var header = context.OwinContext.Response.Headers.SingleOrDefault(h => h.Key == "Access-Control-Allow-Origin");
             if (header.Equals(default(KeyValuePair<string, string[]>)))
             {
@@ -44,30 +40,12 @@ namespace WEB.Providers
                 return;
             }
 
-
-            //var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-            //identity.AddClaim(new Claim("sub", context.UserName));
-            //identity.AddClaim(new Claim("role", "user"));
-
-
-            //context.Validated(identity);
-
-            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
-
-            var roles = await authService.GetAllRoles(user.Id);
-
-            if (roles.Count() > 0)
-            {
-                foreach (var role in roles)
-                {
-                    identity.AddClaim(new Claim(ClaimTypes.Role, role));
-                }
-            }
-
+            ClaimsIdentity oAuthIdentity = await authService.CreateIdentity(user, OAuthDefaults.AuthenticationType);
+            oAuthIdentity.AddClaim(new Claim(ClaimTypes.Name, user.UserName));
 
             var rolesString = await authService.GetAllRolesJson(user.Id);
             AuthenticationProperties properties = CreateProperties(user.UserName, rolesString, user.Id);
-            AuthenticationTicket ticket = new AuthenticationTicket(identity, properties);
+            AuthenticationTicket ticket = new AuthenticationTicket(oAuthIdentity, properties);
 
             context.Validated(ticket);
         }
