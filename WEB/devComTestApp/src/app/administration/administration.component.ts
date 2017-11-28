@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
 import { MatTableDataSource } from '@angular/material/table';
+
+import { DataService } from '../services/data.service';
+import { User } from '../custom-types/user';
 
 @Component({
   selector: 'app-administration',
@@ -32,10 +34,4 @@ export class AdministrationComponent implements OnInit {
     filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
-
-}
-
-export class User {
-  id: string;
-  userName: string;
 }

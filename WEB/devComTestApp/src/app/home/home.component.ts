@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   isAdmin: boolean = false;
 
   ngOnInit() {
-    this.isAdmin = this.authService.isAdmin;
+    this.isAdmin = this.authService.isInRole("admin");
   }
 
   constructor(private authService: AuthService) {

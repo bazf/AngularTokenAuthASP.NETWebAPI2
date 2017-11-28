@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Note } from '../note';
-import { DataService } from '../data.service';
-import { AuthService } from '../auth.service';
+
+import { Note } from '../custom-types/note';
+import { DataService } from '../services/data.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-all-notes',
@@ -20,7 +21,7 @@ export class AllNotesComponent implements OnInit {
 
   ngOnInit() {
     this.getNotes();
-    this.isAdmin = this.authService.isAdmin;
+    this.isAdmin = this.authService.isInRole("admin");
   }
 
   getNotes(): void {

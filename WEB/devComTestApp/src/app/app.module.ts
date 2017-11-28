@@ -17,10 +17,10 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { DataService } from './data.service';
+import { DataService } from './services/data.service';
 import { MyNotesComponent } from './my-notes/my-notes.component';
 import { AllNotesComponent } from './all-notes/all-notes.component';
 import { AdministrationComponent } from './administration/administration.component';
