@@ -3,6 +3,7 @@
     using DAL.Entities;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     public class ObjectFactory
     {
@@ -65,6 +66,19 @@
         }
 
         public List<UserEntity> GetUserList()
+        {
+            return new List<UserEntity>
+            {
+                new UserEntity
+                {
+                    Id = "id1",
+                    UserName = "user1",
+                    Notes = GetUserNoteList().Where(n => n.UserId == "id1").ToList()
+                }
+            };
+        }
+
+        public async Task<List<UserEntity>> GetUserListAsync()
         {
             return new List<UserEntity>
             {

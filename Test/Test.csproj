@@ -68,6 +68,7 @@
   <ItemGroup>
     <Compile Include="BaseBLLTestData.cs" />
     <Compile Include="ObjectFactory.cs" />
+    <Compile Include="UserBLTest.cs" />
     <Compile Include="UserNoteBLTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

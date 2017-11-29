@@ -26,7 +26,7 @@
         }
 
         [TestMethod]
-        public void RemoveById_Test()
+        public void RemoveNoteById_Test()
         {
             // Arrange
             CreateTarget();
@@ -44,7 +44,7 @@
         }
 
         [TestMethod]
-        public void Add_Test()
+        public void AddNote_Test()
         {
             // Arrange
             CreateTarget();
@@ -62,7 +62,7 @@
         }
 
         [TestMethod]
-        public void GetAll_Test()
+        public void GetAllNotes_Test()
         {
             // Arrange
             CreateTarget();
@@ -81,7 +81,7 @@
         }
 
         [TestMethod]
-        public void GetForUser_Test()
+        public void GetNotesForUser_Test()
         {
             // Arrange
             CreateTarget();

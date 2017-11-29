@@ -8,18 +8,15 @@
     using System.Threading.Tasks;
     using BLL.Mapping;
     using System;
-    using BLL.Interfaces.IServices;
 
     public class UserBL : BaseBL, IUserBL
     {
         private readonly IMapper mapper;
-        private IAuthenticationService authService;
 
-        public UserBL(IUnitOfWorkFactory factory, IMapper mapper, IAuthenticationService authService)
+        public UserBL(IUnitOfWorkFactory factory, IMapper mapper)
             : base(factory)
         {
             this.mapper = mapper;
-            this.authService = authService;
         }
 
         public async Task<List<UserDTO>> GetAllAsync()
