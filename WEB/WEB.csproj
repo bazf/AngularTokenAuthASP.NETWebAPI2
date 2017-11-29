@@ -237,6 +237,7 @@
     <Content Include="devComTestApp\src\app\administration\administration.component.html" />
     <Content Include="devComTestApp\src\app\all-notes\all-notes.component.html" />
     <Content Include="devComTestApp\src\app\app.component.html" />
+    <TypeScriptCompile Include="devComTestApp\src\app\auth.interceptor.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\custom-types\auth-data.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\custom-types\current-user.ts" />
     <Content Include="devComTestApp\src\app\home\home.component.html" />

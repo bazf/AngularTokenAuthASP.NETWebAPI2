@@ -19,11 +19,12 @@ import { RegisterComponent } from './register/register.component';
 
 import { AuthService } from './services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataService } from './services/data.service';
 import { MyNotesComponent } from './my-notes/my-notes.component';
 import { AllNotesComponent } from './all-notes/all-notes.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { AuthInterceptor } from './auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,11 @@ import { AdministrationComponent } from './administration/administration.compone
     HttpClientModule
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
     AuthService,
     DataService
   ],
