@@ -307,6 +307,7 @@
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.module.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\custom-types\user.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\services\auth.guard.service.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\services\auth.service.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\services\auth.service.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\services\data.service.spec.ts" />

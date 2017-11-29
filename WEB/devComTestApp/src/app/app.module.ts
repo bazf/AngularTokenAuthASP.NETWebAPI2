@@ -25,6 +25,7 @@ import { MyNotesComponent } from './my-notes/my-notes.component';
 import { AllNotesComponent } from './all-notes/all-notes.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { AuthInterceptor } from './auth.interceptor';
+import { AuthGuard } from './services/auth.guard.service';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { AuthInterceptor } from './auth.interceptor';
       multi: true,
     },
     AuthService,
+    AuthGuard,
     DataService
   ],
   bootstrap: [AppComponent]

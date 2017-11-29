@@ -52,6 +52,8 @@ export class AuthService {
     this.authData.isAuth = user.access_token && true;
   }
 
+  redirectUrl: string;
+
   isInRole(role: string): boolean {
     if (this.authData.roles != undefined) {
       return this.authData.roles.includes(role);

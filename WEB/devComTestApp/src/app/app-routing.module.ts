@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { MyNotesComponent } from './my-notes/my-notes.component';
 import { AllNotesComponent } from './all-notes/all-notes.component';
 import { AdministrationComponent } from './administration/administration.component';
+import { AuthGuard } from './services/auth.guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -16,7 +17,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
 
   {
-    path: 'home', component: HomeComponent,
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard],
     children: [
       { path: 'my-notes', component: MyNotesComponent },
       { path: 'all-notes', component: AllNotesComponent },
