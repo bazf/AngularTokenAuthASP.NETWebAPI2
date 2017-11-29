@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
-import { AuthService } from './auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
@@ -15,12 +15,13 @@ export class AuthGuard implements CanActivate {
   }
 
   checkLogin(url: string): boolean {
-    if (this.authService.getAuthData().isAuth) { return true; }
+    if (this.authService.getAuthData().isAuth) {
+      if (url == "/home") this.router.navigate(['home/my-notes']);
+      return true;
+    }
 
-    // Store the attempted URL for redirecting
     this.authService.redirectUrl = url;
 
-    // Navigate to the login page with extras
     this.router.navigate(['login']);
     return false;
   }

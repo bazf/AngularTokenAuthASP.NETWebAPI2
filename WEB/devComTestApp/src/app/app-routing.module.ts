@@ -8,13 +8,14 @@ import { RegisterComponent } from './register/register.component';
 import { MyNotesComponent } from './my-notes/my-notes.component';
 import { AllNotesComponent } from './all-notes/all-notes.component';
 import { AdministrationComponent } from './administration/administration.component';
-import { AuthGuard } from './services/auth.guard.service';
+import { AuthGuard } from './route-guards/auth.guard.service';
+import { AnonymousGuard } from './route-guards/anonymous.guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', canActivate: [AnonymousGuard], component: LoginComponent },
+  { path: 'register', canActivate: [AnonymousGuard], component: RegisterComponent },
 
   {
     path: 'home',

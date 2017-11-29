@@ -307,7 +307,8 @@
     <TypeScriptCompile Include="devComTestApp\src\app\app.component.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\app.module.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\custom-types\user.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\services\auth.guard.service.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\route-guards\anonymous.guard.service.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\route-guards\auth.guard.service.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\services\auth.service.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\services\auth.service.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\services\data.service.spec.ts" />
@@ -321,6 +322,7 @@
     <TypeScriptCompile Include="devComTestApp\src\app\custom-types\note.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\register\register.component.spec.ts" />
     <TypeScriptCompile Include="devComTestApp\src\app\register\register.component.ts" />
+    <TypeScriptCompile Include="devComTestApp\src\app\route-guards\admin.guard.service.ts" />
     <TypeScriptCompile Include="devComTestApp\src\environments\environment.prod.ts" />
     <TypeScriptCompile Include="devComTestApp\src\environments\environment.ts" />
     <TypeScriptCompile Include="devComTestApp\src\main.ts" />

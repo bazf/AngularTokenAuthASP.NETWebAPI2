@@ -24,7 +24,7 @@ export class AuthService {
     if (currentUser == null) return;
 
     localStorage.setItem("currentUser", JSON.stringify({
-      username: currentUser.userName,
+      userName: currentUser.userName,
       token: currentUser.access_token,
       expires_in: currentUser.expires_in,
       roles: currentUser.roles,
@@ -49,10 +49,10 @@ export class AuthService {
     this.authData.id = user.id;
     this.authData.userName = user.userName;
     this.authData.roles = user.roles;
-    this.authData.isAuth = user.access_token && true;
+    this.authData.isAuth = true;
   }
 
-  redirectUrl: string;
+  redirectUrl: string = "/home/my-notes";
 
   isInRole(role: string): boolean {
     if (this.authData.roles != undefined) {
@@ -108,6 +108,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('currentUser');
+    this.authData = new AuthData();
     this.router.navigate(['login']);
   }
 }

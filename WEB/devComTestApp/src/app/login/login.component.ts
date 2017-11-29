@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.userName, this.password).then(r => {
       if (r === "success") {
         this.authMessage = r;
-        this.router.navigate(['home/my-notes']);
+        this.router.navigate([this.authService.redirectUrl]);
       }
     },
       e => {

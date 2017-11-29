@@ -22,7 +22,6 @@ export class AuthInterceptor implements HttpInterceptor {
           case 401: this.router.navigate(['login']); break;
           case 403: this.router.navigate(['login']); break;
           case 500: this.router.navigate(['login']); break;
-          default: this.router.navigate(['login']);
         }
       }
     });
