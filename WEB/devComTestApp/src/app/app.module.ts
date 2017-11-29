@@ -27,6 +27,7 @@ import { AdministrationComponent } from './administration/administration.compone
 import { AuthInterceptor } from './auth.interceptor';
 import { AuthGuard } from './route-guards/auth.guard.service';
 import { AnonymousGuard } from './route-guards/anonymous.guard.service';
+import { AdminGuard } from './route-guards/admin.guard.service';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AnonymousGuard } from './route-guards/anonymous.guard.service';
     },
     AuthService,
     AuthGuard,
+    AdminGuard,
     AnonymousGuard,
     DataService
   ],

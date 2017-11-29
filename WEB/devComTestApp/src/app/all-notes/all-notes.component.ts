@@ -11,11 +11,9 @@ import { AuthService } from '../services/auth.service';
 })
 export class AllNotesComponent implements OnInit {
 
-  newNote: Note = new Note();
-
-  result: boolean;
-  isAdmin: boolean = false;
-  notes: Note[] = [];
+  private newNote: Note = new Note();
+  private isAdmin: boolean = false;
+  private notes: Note[] = [];
 
   constructor(private dataService: DataService, private authService: AuthService) { }
 
@@ -24,13 +22,13 @@ export class AllNotesComponent implements OnInit {
     this.isAdmin = this.authService.isInRole("admin");
   }
 
-  getNotes(): void {
+  private getNotes(): void {
     this.dataService.get<Note[]>("note/all").subscribe(r => {
       this.notes = r;
     });
   }
 
-  removeNote(id: number): void {
+  private removeNote(id: number): void {
     this.dataService.delete<boolean>("note/remove", id).subscribe(r => {
       var index = this.notes.findIndex(n => n.id == id);
       this.notes.splice(index, 1);

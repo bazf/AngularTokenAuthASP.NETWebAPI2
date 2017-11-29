@@ -9,7 +9,7 @@
 
         IEnumerable<UserNoteDTO> GetForUser(string userId);
 
-        bool Add(NewUserNoteDTO newNote, string userId);
+        int Add(NewUserNoteDTO newNote, string userId);
 
         UserNoteDTO GetById(int noteId);
 

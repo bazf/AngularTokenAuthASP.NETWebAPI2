@@ -10,6 +10,7 @@ import { AllNotesComponent } from './all-notes/all-notes.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { AuthGuard } from './route-guards/auth.guard.service';
 import { AnonymousGuard } from './route-guards/anonymous.guard.service';
+import { AdminGuard } from './route-guards/admin.guard.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -24,7 +25,7 @@ const routes: Routes = [
     children: [
       { path: 'my-notes', component: MyNotesComponent },
       { path: 'all-notes', component: AllNotesComponent },
-      { path: 'administration', component: AdministrationComponent }
+      { path: 'administration', canActivate: [AdminGuard], component: AdministrationComponent }
     ]
   },
 ];

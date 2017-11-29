@@ -49,7 +49,7 @@
             }
         }
 
-        public bool Add(NewUserNoteDTO newNote, string userId)
+        public int Add(NewUserNoteDTO newNote, string userId)
         {
             try
             {
@@ -58,12 +58,12 @@
                     var user = x.UserRepository.GetById(userId);
                     user.Notes.Add(mapper.Map(newNote, new UserNoteEntity()));
                     x.Save();
-                    return true;
+                    return user.Notes.Where(n => n.Title == newNote.Title).LastOrDefault().Id;
                 });
             }
             catch (Exception ex)
             {
-                return false;
+                return -1;
             }
         }
 

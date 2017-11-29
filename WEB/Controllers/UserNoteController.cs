@@ -4,7 +4,6 @@
     using Core.DTOs.UserNoteDTOs;
     using System.Collections.Generic;
     using System.Web.Http;
-    using System.Linq;
     using Microsoft.AspNet.Identity;
 
     [Authorize, RoutePrefix("api/note")]
@@ -26,7 +25,6 @@
         [HttpGet, Route("all-my")]
         public IEnumerable<UserNoteDTO> GetAllMy()
         {
-
                 return userNoteBL.GetForUser(User.Identity.GetUserId());
         }
 
@@ -37,7 +35,7 @@
         }
 
         [HttpPost, Route("add")]
-        public bool Add(NewUserNoteDTO newNote)
+        public int Add(NewUserNoteDTO newNote)
         {
             return userNoteBL.Add(newNote, User.Identity.GetUserId());
         }

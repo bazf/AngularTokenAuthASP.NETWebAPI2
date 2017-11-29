@@ -215,7 +215,6 @@
     <Compile Include="Controllers\UserNoteController.cs" />
     <Compile Include="MVCControllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DependencyResolver\DependencyRegistrator.cs" />
     <Compile Include="DependencyResolver\MVCDependencyResolver\IMVCDependencyResolver.cs" />
     <Compile Include="DependencyResolver\MVCDependencyResolver\MVCDependencyResolver.cs" />
