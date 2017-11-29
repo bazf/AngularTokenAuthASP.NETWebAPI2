@@ -9,8 +9,10 @@
     {
         protected Mock<IUnitOfWorkFactory> factoryMock;
         protected Mock<IUnitOfWork> unitOfWorkMock;
+
         protected Mock<IGenericRepository<UserNoteEntity>> userNoteRepoMock;
-       
+        protected Mock<IGenericRepository<UserEntity>> userRepoMock;
+
         protected Mock<IMapper> imapperMock;
         protected Mapper realMapperMock;
         protected ObjectFactory objFactory;
@@ -19,6 +21,8 @@
         {
             factoryMock = new Mock<IUnitOfWorkFactory>();
             unitOfWorkMock = new Mock<IUnitOfWork>();
+
+            userRepoMock = new Mock<IGenericRepository<UserEntity>>();
             userNoteRepoMock = new Mock<IGenericRepository<UserNoteEntity>>();
 
             imapperMock = new Mock<IMapper>();
@@ -26,6 +30,7 @@
 
             factoryMock.Setup(x => x.Create()).Returns(unitOfWorkMock.Object);
             unitOfWorkMock.Setup(un => un.UserNoteRepository).Returns(userNoteRepoMock.Object);
+            unitOfWorkMock.Setup(un => un.UserRepository).Returns(userRepoMock.Object);
 
             objFactory = new ObjectFactory();
         }
