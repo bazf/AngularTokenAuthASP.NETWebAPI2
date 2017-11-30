@@ -4,7 +4,6 @@
     using BLL.Interfaces.IBLs;
     using Core.DTOs.UserDTOs;
     using DAL.Interfaces;
-    using System.Linq;
     using System.Threading.Tasks;
     using BLL.Mapping;
     using System;

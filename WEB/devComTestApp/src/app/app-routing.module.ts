@@ -13,8 +13,6 @@ import { AnonymousGuard } from './route-guards/anonymous.guard.service';
 import { AdminGuard } from './route-guards/admin.guard.service';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-
   { path: 'login', canActivate: [AnonymousGuard], component: LoginComponent },
   { path: 'register', canActivate: [AnonymousGuard], component: RegisterComponent },
 
@@ -28,6 +26,9 @@ const routes: Routes = [
       { path: 'administration', canActivate: [AdminGuard], component: AdministrationComponent }
     ]
   },
+
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];
 
 @NgModule({
