@@ -72,9 +72,9 @@
     <Compile Include="Services\AuthenticationService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Core.csproj">
+    <ProjectReference Include="..\Common\Common.csproj">
       <Project>{B5A304F1-D584-4D4B-83AF-789C8E88366E}</Project>
-      <Name>Core</Name>
+      <Name>Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{18C8F665-374E-4B43-AE7B-836DD1B1C9CB}</Project>
