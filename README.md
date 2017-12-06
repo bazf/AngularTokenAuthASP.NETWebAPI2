@@ -5,7 +5,7 @@
 User Name: "administrator", Password: "administrator".
 By default, after application start, in system exists only administrator. You can register new users in registration page. The password should not be less then 6 characters.
 
-## EntityFramwork DB Initializer 
+## EntityFramework DB Initializer 
 
 For testing purpose, by default, custom EntityFramwork DB Initializer is setted to `DropCreateDatabaseAlways`. After every new application has been started data base is setted to its default values. You may want to change this behavior, so then you should uncomment needed custom initializer and comment others in DevComDbContext class's constructor.
 
