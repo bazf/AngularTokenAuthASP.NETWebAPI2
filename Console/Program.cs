@@ -7,7 +7,7 @@
     {
         static void Main(string[] args)
         {
-            using (var db = new DevComDbContext())
+            using (var db = new NotesAppContext())
             {
                 WriteLine(db.Roles.Find("1"));
             }

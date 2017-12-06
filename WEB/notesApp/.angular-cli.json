@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "dev-com-test-app",
+    "name": "notes-app",
     "ejected": true
   },
   "apps": [

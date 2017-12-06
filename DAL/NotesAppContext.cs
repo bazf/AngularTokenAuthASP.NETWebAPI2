@@ -7,10 +7,10 @@ namespace DAL
     using System.Data.Entity.Validation;
     using System.Linq;
 
-    public class DevComDbContext : IdentityDbContext<UserEntity>
+    public class NotesAppContext : IdentityDbContext<UserEntity>
     {
-        public DevComDbContext()
-            : base("name=DevComDbContext")
+        public NotesAppContext()
+            : base("name=NotesAppContext")
         {
             //Database.SetInitializer(new CustomCreateDatabaseIfNotExists());
             Database.SetInitializer(new CustomDropCreateDatabaseAlways());

@@ -37,7 +37,7 @@ namespace WEB
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
-                Provider = new DevComTestAuthProvider(NinjectWebCommon.Kernel.GetService<IAuthenticationService>()),
+                Provider = new NotesAppAuthProvider(NinjectWebCommon.Kernel.GetService<IAuthenticationService>()),
             };
 
             // Token Generation

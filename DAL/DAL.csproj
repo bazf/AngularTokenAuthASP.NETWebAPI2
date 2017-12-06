@@ -59,7 +59,7 @@
     <Compile Include="Configurations\UserNoteEntityConfiguration.cs" />
     <Compile Include="CustomDbInitializers.cs" />
     <Compile Include="DefaultData.cs" />
-    <Compile Include="DevComDbContext.cs" />
+    <Compile Include="NotesAppContext.cs" />
     <Compile Include="Entities\UserEntity.cs" />
     <Compile Include="Entities\UserNoteEntity.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />

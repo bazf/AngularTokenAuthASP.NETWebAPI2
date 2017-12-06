@@ -1,7 +1,6 @@
 ﻿namespace WEB.Providers
 {
     using BLL.Interfaces.IServices;
-    using BLL.Services;
     using DAL.Entities;
     using Microsoft.Owin.Security;
     using Microsoft.Owin.Security.OAuth;
@@ -10,11 +9,11 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
 
-    public class DevComTestAuthProvider : OAuthAuthorizationServerProvider
+    public class NotesAppAuthProvider : OAuthAuthorizationServerProvider
     {
         private readonly IAuthenticationService authService;
 
-        public DevComTestAuthProvider(IAuthenticationService authService)
+        public NotesAppAuthProvider(IAuthenticationService authService)
         {
             this.authService = authService;
         }

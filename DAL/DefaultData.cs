@@ -6,7 +6,7 @@
 
     public static class DefaultData
     {
-        public static void Seed(DevComDbContext context)
+        public static void Seed(NotesAppContext context)
         {
             try
             {

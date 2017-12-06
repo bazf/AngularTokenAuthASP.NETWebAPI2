@@ -2,7 +2,7 @@ namespace DAL.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DevComDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<NotesAppContext>
     {
         public Configuration()
         {
@@ -11,7 +11,7 @@ namespace DAL.Migrations
             AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(DevComDbContext context)
+        protected override void Seed(NotesAppContext context)
         {
             DefaultData.Seed(context);
         }

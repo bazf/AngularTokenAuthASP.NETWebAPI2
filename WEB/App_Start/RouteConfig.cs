@@ -12,7 +12,7 @@
             routes.MapPageRoute(
             routeName: "AngularRoute",
             routeUrl: "",
-            physicalFile: "~/devComTestApp/dist/index.html");
+            physicalFile: "~/notesApp/dist/index.html");
 
             routes.MapRoute(
                 name: "Default",

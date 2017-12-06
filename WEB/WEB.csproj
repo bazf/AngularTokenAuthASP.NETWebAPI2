@@ -223,33 +223,27 @@
     <Compile Include="DependencyResolver\WebAPIDependencyResolver\WebAPINinjectDependencyResolver.cs" />
     <Compile Include="DependencyResolver\WebAPIDependencyResolver\WebAPINinjectDependencyScope.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\DevComTestAuthProvider.cs" />
+    <Compile Include="Providers\NotesAppAuthProvider.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="devComTestApp\.gitignore" />
-    <Content Include="devComTestApp\karma.conf.js" />
-    <Content Include="devComTestApp\src\app\administration\administration.component.less" />
-    <Content Include="devComTestApp\src\app\all-notes\all-notes.component.less" />
-    <None Include="devComTestApp\src\app\app.component.less" />
-    <Content Include="devComTestApp\src\app\administration\administration.component.html" />
-    <Content Include="devComTestApp\src\app\all-notes\all-notes.component.html" />
-    <Content Include="devComTestApp\src\app\app.component.html" />
-    <TypeScriptCompile Include="devComTestApp\src\app\auth.interceptor.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\custom-types\auth-data.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\custom-types\current-user.ts" />
-    <Content Include="devComTestApp\src\app\home\home.component.html" />
-    <Content Include="devComTestApp\src\app\login\login.component.html" />
-    <Content Include="devComTestApp\src\app\my-notes\my-notes.component.html" />
-    <Content Include="devComTestApp\src\app\register\register.component.html" />
-    <Content Include="devComTestApp\src\assets\images\bg.jpg" />
-    <Content Include="devComTestApp\src\favicon.ico" />
-    <Content Include="devComTestApp\src\index.html" />
-    <Content Include="devComTestApp\webpack.config.js" />
     <Content Include="favicon.ico" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="notesApp\.gitignore" />
+    <Content Include="notesApp\karma.conf.js" />
+    <Content Include="notesApp\src\app\administration\administration.component.html" />
+    <Content Include="notesApp\src\app\all-notes\all-notes.component.html" />
+    <Content Include="notesApp\src\app\app.component.html" />
+    <Content Include="notesApp\src\app\home\home.component.html" />
+    <Content Include="notesApp\src\app\login\login.component.html" />
+    <Content Include="notesApp\src\app\my-notes\my-notes.component.html" />
+    <Content Include="notesApp\src\app\register\register.component.html" />
+    <Content Include="notesApp\src\assets\images\bg.jpg" />
+    <Content Include="notesApp\src\favicon.ico" />
+    <Content Include="notesApp\src\index.html" />
+    <Content Include="notesApp\webpack.config.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -262,20 +256,23 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="devComTestApp\.angular-cli.json" />
-    <Content Include="devComTestApp\.editorconfig" />
-    <Content Include="devComTestApp\package.json" />
-    <Content Include="devComTestApp\README.md" />
-    <Content Include="devComTestApp\src\assets\.gitkeep" />
-    <Content Include="devComTestApp\src\tsconfig.app.json" />
-    <Content Include="devComTestApp\src\tsconfig.spec.json" />
-    <Content Include="devComTestApp\tsconfig.json" />
-    <Content Include="devComTestApp\tslint.json" />
-    <Content Include="devComTestApp\src\styles.less" />
-    <Content Include="devComTestApp\src\app\home\home.component.less" />
-    <Content Include="devComTestApp\src\app\login\login.component.less" />
-    <Content Include="devComTestApp\src\app\register\register.component.less" />
-    <Content Include="devComTestApp\src\app\my-notes\my-notes.component.less" />
+    <Content Include="notesApp\src\app\administration\administration.component.less" />
+    <Content Include="notesApp\src\app\all-notes\all-notes.component.less" />
+    <Content Include="notesApp\src\app\app.component.less" />
+    <Content Include="notesApp\src\app\home\home.component.less" />
+    <Content Include="notesApp\src\app\login\login.component.less" />
+    <Content Include="notesApp\src\app\my-notes\my-notes.component.less" />
+    <Content Include="notesApp\src\app\register\register.component.less" />
+    <Content Include="notesApp\src\styles.less" />
+    <Content Include="notesApp\src\tsconfig.app.json" />
+    <Content Include="notesApp\src\tsconfig.spec.json" />
+    <Content Include="notesApp\.angular-cli.json" />
+    <Content Include="notesApp\.editorconfig" />
+    <Content Include="notesApp\package-lock.json" />
+    <Content Include="notesApp\package.json" />
+    <Content Include="notesApp\README.md" />
+    <Content Include="notesApp\tsconfig.json" />
+    <Content Include="notesApp\tslint.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -293,32 +290,35 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="devComTestApp\src\app\administration\administration.component.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\all-notes\all-notes.component.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\app.component.spec.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\app.component.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\app.module.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\custom-types\user.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\route-guards\anonymous.guard.service.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\route-guards\auth.guard.service.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\services\auth.service.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\services\data.service.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\home\home.component.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\login\login.component.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\my-notes\my-notes.component.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\custom-types\note.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\register\register.component.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\app\route-guards\admin.guard.service.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\environments\environment.prod.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\environments\environment.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\main.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\polyfills.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\test.ts" />
-    <TypeScriptCompile Include="devComTestApp\src\typings.d.ts" />
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <TypeScriptCompile Include="notesApp\src\app\administration\administration.component.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\all-notes\all-notes.component.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\app-routing.module.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\app.component.spec.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\app.component.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\app.module.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\auth.interceptor.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\custom-types\auth-data.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\custom-types\current-user.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\custom-types\note.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\custom-types\user.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\home\home.component.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\login\login.component.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\my-notes\my-notes.component.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\register\register.component.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\route-guards\admin.guard.service.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\route-guards\anonymous.guard.service.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\route-guards\auth.guard.service.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\services\auth.service.ts" />
+    <TypeScriptCompile Include="notesApp\src\app\services\data.service.ts" />
+    <TypeScriptCompile Include="notesApp\src\environments\environment.prod.ts" />
+    <TypeScriptCompile Include="notesApp\src\environments\environment.ts" />
+    <TypeScriptCompile Include="notesApp\src\main.ts" />
+    <TypeScriptCompile Include="notesApp\src\polyfills.ts" />
+    <TypeScriptCompile Include="notesApp\src\test.ts" />
+    <TypeScriptCompile Include="notesApp\src\typings.d.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -357,9 +357,9 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <PropertyGroup>
-    <PreBuildEvent>echo "cd $(ProjectDir)devComTestApp" &amp;&amp;^
-cd "$(ProjectDir)devComTestApp" &amp;&amp;^
-echo "building devComTestApp" &amp;&amp;^
+    <PreBuildEvent>echo "cd $(ProjectDir)notesApp" &amp;&amp;^
+cd "$(ProjectDir)notesApp" &amp;&amp;^
+echo "building notesApp" &amp;&amp;^
 npm run build</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

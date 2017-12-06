@@ -15,13 +15,13 @@
 
     public class AuthenticationService : IAuthenticationService, IDisposable
     {
-        private DevComDbContext ctx;
+        private NotesAppContext ctx;
 
         private UserManager<UserEntity> userManager;
 
         public AuthenticationService()
         {
-            ctx = new DevComDbContext();
+            ctx = new NotesAppContext();
             userManager = new UserManager<UserEntity>(new UserStore<UserEntity>(ctx));
         }
 

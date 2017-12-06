@@ -5,7 +5,7 @@
 
     public class UnitOfWork : IUnitOfWork
     {
-        private DevComDbContext context = new DevComDbContext();
+        private NotesAppContext context = new NotesAppContext();
 
 
         private IGenericRepository<UserEntity> userRepository;

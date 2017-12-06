@@ -8,11 +8,11 @@
 
     public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
-        private readonly DevComDbContext context;
+        private readonly NotesAppContext context;
 
         private readonly DbSet<TEntity> dbSet;
 
-        public GenericRepository(DevComDbContext context)
+        public GenericRepository(NotesAppContext context)
         {
             this.context = context;
             dbSet = context.Set<TEntity>();
