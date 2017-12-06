@@ -1,7 +1,5 @@
 ﻿namespace Core.DTOs.UserNoteDTOs
 {
-    using Core.DTOs.UserDTOs;
-
     public class UserNoteDTO
     {
         public int Id { get; set; }
