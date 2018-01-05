@@ -4,7 +4,7 @@
 
 Angular Token Authentication application using ASP.NET Web API 2 and Owin middleware.
 
-Application allows the users to do the following:
+Application allows users to do the following:
 Register in the system by providing username and password.
 Secure certain views from viewing by authenticated users (Anonymous users).
 Allow registered users to log-in and keep them logged in for 30 minutes using tokens or until they log-out from the system, this is done using tokens.
