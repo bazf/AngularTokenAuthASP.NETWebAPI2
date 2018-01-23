@@ -9,7 +9,7 @@ Register in the system by providing username and password.
 Secure certain views from viewing by authenticated users (Anonymous users).
 Allow registered users to log-in and keep them logged in for 30 minutes using tokens or until they log-out from the system, this is done using tokens.
 System is role based (admin and user).
-Used following front-end frameworks:
+Used following front-end frameworks and technologies:
 HTML/CSS,
 Angular 2 rev 5.0.2,
 Angular Material 2.0.0,
